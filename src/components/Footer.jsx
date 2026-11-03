@@ -11,7 +11,7 @@ import logo from "../assets/logo braddora.png";
 
 const Footer = () => {
   const whatsappLink =
-    "https://wa.me/923099860405?text=Hi%2C%20I%27m%20interested%20in%20custom-branded%20water%20bottles.";
+    "https://wa.me/923433787019?text=Hi%2C%20I%27m%20interested%20in%20custom-branded%20water%20bottles.";
 
   const linkedinLink =
     "https://www.linkedin.com/in/muhammad-ahmed-56a42a3aa/";
@@ -71,7 +71,7 @@ const Footer = () => {
                 className="flex items-center gap-2 transition hover:text-[#D6B779]"
               >
                 <Phone size={15} className="text-[#D6B779]" />
-                <span>+92 309 9860405</span>
+                <span>+92 343 3787019</span>
               </a>
             </div>
           </div>

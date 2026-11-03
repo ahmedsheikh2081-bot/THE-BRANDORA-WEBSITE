@@ -36,11 +36,9 @@ function Contact() {
 *Phone:* ${formData.phone.trim()}
 *Order Details:* ${formData.message.trim()}`;
 
-    const whatsappUrl = `https://wa.me/923099860405?text=${encodeURIComponent(
-      text
-    )}`;
+    const whatsappUrl = `https://wa.me/923433787019?text=${encodeURIComponent(text)}`;
 
-    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+    window.open(whatsappUrl, "_blank");
   };
 
   return (
@@ -71,11 +69,11 @@ function Contact() {
 
         {/* Main Grid */}
         <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-12">
-          {/* Left Column: Contact Info Cards */}
+          {/* Left Column */}
           <div className="flex flex-col gap-5 lg:col-span-5">
             {/* WhatsApp Card */}
             <a
-              href="https://wa.me/923099860405?text=Hi%2C%20I%20want%20to%20order%20custom%20branded%20water%20bottles."
+              href="https://wa.me/923433787019?text=Hi%2C%20I%20want%20to%20order%20custom%20branded%20water%20bottles."
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center gap-4 rounded-[1.25rem] border border-[#E7E3D4] bg-[#F9F7EF] p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#D6B779] hover:bg-white hover:shadow-md"

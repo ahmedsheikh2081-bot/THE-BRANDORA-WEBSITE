@@ -15,7 +15,7 @@ import eventsImg from "../assets/event bottel .jpg";
 import gamingImg from "../assets/gaming zone.jpg";
 import gymImg from "../assets/gym bottel.jpg";
 
-const whatsappLink = "https://wa.me/923099860405";
+const whatsappLink = "https://wa.me/923433787019";
 
 const services = [
   {

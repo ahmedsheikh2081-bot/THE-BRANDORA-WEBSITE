@@ -11,7 +11,7 @@ import {
 import heroBgImage from "../assets/home page bg image.jpg";
 
 const whatsappLink =
-  "https://wa.me/923099860405?text=Hi%2C%20I%20want%20to%20order%20custom%20branded%20water%20bottles.";
+  "https://wa.me/923433787019?text=Hi%2C%20I%20want%20to%20order%20custom%20branded%20water%20bottles.";
 
 const features = [
   {
