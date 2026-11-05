@@ -38,44 +38,55 @@ function Contact() {
 
     const whatsappUrl = `https://wa.me/923433787019?text=${encodeURIComponent(text)}`;
 
-    window.open(whatsappUrl, "_blank");
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
   };
 
   return (
-    <main
+    <section
       id="contact"
+      aria-labelledby="contact-heading"
       className="scroll-mt-24 min-h-screen bg-[#F6F4EB] px-4 py-12 font-sans text-[#123D32] antialiased sm:px-6 sm:py-16 lg:px-10 lg:py-20"
     >
       <div className="mx-auto max-w-[1200px]">
-        {/* Header Section */}
+
+        {/* SEO Header */}
         <div className="mx-auto mb-12 max-w-3xl text-center sm:mb-16">
+
           <span className="inline-block rounded-full border border-[#D6B779]/60 bg-[#F2EFE3] px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.25em] text-[#66816C] sm:text-xs">
             Get in Touch
           </span>
 
-          <h1 className="mt-4 font-serif text-3xl font-semibold tracking-[-0.03em] text-[#123D32] sm:text-4xl md:text-5xl lg:text-[3.2rem]">
-            Let's Build Your{" "}
-            <span className="text-[#66816C]">
-              Brand Together.
+          <h2
+            id="contact-heading"
+            className="mt-4 font-serif text-3xl font-semibold tracking-[-0.03em] text-[#123D32] sm:text-4xl md:text-5xl lg:text-[3.2rem]"
+          >
+            Order Custom Branded
+            <span className="block text-[#66816C]">
+              Water Bottles in Pakistan.
             </span>
-          </h1>
+          </h2>
 
           <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-[#53665A] sm:text-base">
-            Have an idea or want custom-branded water bottles for
-            your business? Fill out the form below or chat with us
-            directly on WhatsApp.
+            Looking for personalized water bottles for your
+            business or event? THE BRANDORA provides custom
+            branded water bottle solutions in Karachi and
+            across Pakistan. Contact us for business orders,
+            custom labels and event enquiries.
           </p>
         </div>
 
         {/* Main Grid */}
         <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-12">
+
           {/* Left Column */}
           <div className="flex flex-col gap-5 lg:col-span-5">
+
             {/* WhatsApp Card */}
             <a
               href="https://wa.me/923433787019?text=Hi%2C%20I%20want%20to%20order%20custom%20branded%20water%20bottles."
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Contact THE BRANDORA on WhatsApp for custom branded water bottle orders"
               className="group flex items-center gap-4 rounded-[1.25rem] border border-[#E7E3D4] bg-[#F9F7EF] p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#D6B779] hover:bg-white hover:shadow-md"
             >
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#123D32] text-[#D6B779] shadow-sm transition-transform duration-300 group-hover:scale-105">
@@ -83,9 +94,9 @@ function Contact() {
               </div>
 
               <div className="flex-1">
-                <h2 className="text-base font-bold text-[#123D32]">
+                <h3 className="text-base font-bold text-[#123D32]">
                   Chat on WhatsApp
-                </h2>
+                </h3>
                 <p className="mt-0.5 text-xs text-[#53665A]">
                   Instant response for quick orders
                 </p>
@@ -104,9 +115,9 @@ function Contact() {
               </div>
 
               <div>
-                <h2 className="text-base font-bold text-[#123D32]">
+                <h3 className="text-base font-bold text-[#123D32]">
                   Location
-                </h2>
+                </h3>
                 <p className="mt-0.5 text-xs text-[#53665A]">
                   Karachi, Pakistan
                 </p>
@@ -116,6 +127,7 @@ function Contact() {
             {/* Business Support Card */}
             <a
               href="mailto:support@thebrandora.com"
+              aria-label="Email THE BRANDORA business support"
               className="flex items-center gap-4 rounded-[1.25rem] border border-[#E7E3D4] bg-[#F9F7EF] p-5 transition-colors hover:border-[#D6B779]"
             >
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#123D32] text-[#D6B779] shadow-sm">
@@ -123,9 +135,9 @@ function Contact() {
               </div>
 
               <div>
-                <h2 className="text-base font-bold text-[#123D32]">
+                <h3 className="text-base font-bold text-[#123D32]">
                   Business Support
-                </h2>
+                </h3>
                 <p className="mt-0.5 text-xs text-[#53665A]">
                   support@thebrandora.com
                 </p>
@@ -135,13 +147,14 @@ function Contact() {
 
           {/* Right Column: Inquiry Form */}
           <div className="rounded-[1.5rem] border border-[#E7E3D4] bg-[#F9F7EF] p-6 shadow-sm sm:p-8 lg:col-span-7 lg:p-10">
-            <h2 className="font-serif text-2xl font-semibold text-[#123D32]">
+
+            <h3 className="font-serif text-2xl font-semibold text-[#123D32]">
               Send Us a Message
-            </h2>
+            </h3>
 
             <p className="mt-1 text-xs text-[#53665A] sm:text-sm">
-              Fill out this quick form and it will automatically
-              generate your message for WhatsApp.
+              Tell us about your business or event requirements.
+              Your enquiry will be prepared for WhatsApp.
             </p>
 
             <form
@@ -149,6 +162,7 @@ function Contact() {
               className="mt-6 flex flex-col gap-4"
             >
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+
                 {/* Name */}
                 <div className="flex flex-col gap-1.5">
                   <label
@@ -163,6 +177,7 @@ function Contact() {
                       size={16}
                       className="absolute left-3.5 text-[#718075]"
                     />
+
                     <input
                       id="contact-name"
                       type="text"
@@ -191,6 +206,7 @@ function Contact() {
                       size={16}
                       className="absolute left-3.5 text-[#718075]"
                     />
+
                     <input
                       id="contact-business"
                       type="text"
@@ -219,6 +235,7 @@ function Contact() {
                     size={16}
                     className="absolute left-3.5 text-[#718075]"
                   />
+
                   <input
                     id="contact-phone"
                     type="tel"
@@ -266,7 +283,7 @@ function Contact() {
           </div>
         </div>
       </div>
-    </main>
+    </section>
   );
 }
 

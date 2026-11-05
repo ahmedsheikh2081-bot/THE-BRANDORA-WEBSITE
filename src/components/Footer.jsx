@@ -1,11 +1,10 @@
 
-import React from "react";
 import {
   ArrowUpRight,
   MessageCircle,
   Phone,
 } from "lucide-react";
-import { Link } from "react-router-dom";
+
 import logo from "../assets/logo braddora.png";
 
 const Footer = () => {
@@ -35,23 +34,27 @@ const Footer = () => {
     },
   ];
 
+  // Single-page section navigation
   const links = [
-    { name: "Home", path: "/" },
-    { name: "About Us", path: "/about" },
-    { name: "Services", path: "/services" },
-    { name: "Our Work", path: "/portfolio" },
-    { name: "Contact", path: "/contact" },
+    { name: "Home", path: "#home" },
+    { name: "About Us", path: "#about" },
+    { name: "Services", path: "#services" },
+    { name: "Our Work", path: "#portfolio" },
+    { name: "Contact", path: "#contact" },
   ];
 
   const services = [
-    "Custom Branded Bottles",
-    "Business Branding",
-    "Corporate Events",
+    "Custom Branded Water Bottles",
+    "Business Bottle Branding",
+    "Corporate Event Bottles",
     "Personalized Event Bottles",
   ];
 
   return (
-    <footer className="bg-[#123D32] text-[#FAF8F2]">
+    <footer
+      className="bg-[#123D32] text-[#FAF8F2]"
+      aria-label="THE BRANDORA website footer"
+    >
       {/* Top Gold Line */}
       <div className="h-[2px] w-full bg-[#D6B779]" />
 
@@ -62,28 +65,37 @@ const Footer = () => {
 
           {/* Brand Section */}
           <div className="lg:col-span-4">
-            <Link to="/" className="inline-flex items-center gap-3">
+
+            <a
+              href="#home"
+              aria-label="THE BRANDORA - Back to home"
+              className="inline-flex items-center gap-3"
+            >
               <img
                 src={logo}
-                alt="THE BRANDORA Logo"
+                alt="THE BRANDORA custom branded water bottle branding logo"
                 className="h-14 w-14 object-contain"
+                loading="lazy"
+                decoding="async"
               />
 
               <div>
-                <h2 className="font-serif text-2xl font-bold tracking-wide text-[#FAF8F2]">
+                <span className="block font-serif text-2xl font-bold tracking-wide text-[#FAF8F2]">
                   THE BRANDORA
-                </h2>
+                </span>
 
-                <p className="mt-1 text-[9px] font-semibold tracking-[0.25em] text-[#D6B779]">
+                <span className="mt-1 block text-[9px] font-semibold tracking-[0.25em] text-[#D6B779]">
                   YOUR BRAND. YOUR BOTTLE.
-                </p>
+                </span>
               </div>
-            </Link>
+            </a>
 
             <p className="mt-6 max-w-sm text-sm leading-7 text-[#FAF8F2]/70">
-              Give your brand a personal touch with custom-branded
-              water bottles. We help businesses and events stand
-              out through personalized bottle branding.
+              THE BRANDORA provides custom branded water bottles
+              with personalized labels featuring your business
+              logo and identity. We help cafes, restaurants,
+              hotels, corporate businesses and events create
+              a memorable brand presentation in Pakistan.
             </p>
 
             {/* WhatsApp Number */}
@@ -91,6 +103,7 @@ const Footer = () => {
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Contact THE BRANDORA on WhatsApp at +92 343 3787019"
               className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-[#D6B779] transition-colors hover:text-[#FAF8F2]"
             >
               <Phone size={15} />
@@ -101,7 +114,7 @@ const Footer = () => {
             {/* Social Media */}
             <div className="mt-7">
               <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.2em] text-[#D6B779]">
-                Follow Us
+                Follow THE BRANDORA
               </p>
 
               <div className="flex flex-wrap gap-3">
@@ -111,7 +124,7 @@ const Footer = () => {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={social.name}
+                    aria-label={`Follow THE BRANDORA on ${social.name}`}
                     title={social.name}
                     className="flex h-10 w-10 items-center justify-center rounded-full border border-[#D6B779]/30 text-sm font-bold text-[#FAF8F2] transition-all duration-300 hover:-translate-y-1 hover:border-[#D6B779] hover:bg-[#D6B779] hover:text-[#123D32]"
                   >
@@ -124,29 +137,33 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className="lg:col-span-2">
-            <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-[#D6B779]">
-              Explore
-            </h3>
 
-            <ul className="mt-6 space-y-4">
-              {links.map((link) => (
-                <li key={link.path}>
-                  <Link
-                    to={link.path}
-                    className="inline-flex items-center text-sm text-[#FAF8F2]/70 transition-all duration-300 hover:translate-x-1 hover:text-[#D6B779]"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-[#D6B779]">
+              Explore
+            </h2>
+
+            <nav aria-label="Footer navigation">
+              <ul className="mt-6 space-y-4">
+                {links.map((link) => (
+                  <li key={link.path}>
+                    <a
+                      href={link.path}
+                      className="inline-flex items-center text-sm text-[#FAF8F2]/70 transition-all duration-300 hover:translate-x-1 hover:text-[#D6B779]"
+                    >
+                      {link.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
           </div>
 
           {/* Services */}
           <div className="lg:col-span-3">
-            <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-[#D6B779]">
+
+            <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-[#D6B779]">
               Our Services
-            </h3>
+            </h2>
 
             <ul className="mt-6 space-y-4">
               {services.map((service) => (
@@ -162,23 +179,26 @@ const Footer = () => {
 
           {/* Contact Card */}
           <div className="rounded-2xl border border-[#D6B779]/25 bg-[#FAF8F2]/[0.04] p-6 sm:p-7 lg:col-span-3">
+
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#D6B779]">
               Let's Connect
             </span>
 
-            <h3 className="mt-4 font-serif text-2xl leading-snug text-[#FAF8F2]">
-              Let's make your brand stand out.
-            </h3>
+            <h2 className="mt-4 font-serif text-2xl leading-snug text-[#FAF8F2]">
+              Let's Make Your Brand Stand Out.
+            </h2>
 
             <p className="mt-3 text-sm leading-6 text-[#FAF8F2]/65">
-              Have a business or event in mind? Let's discuss your
-              custom bottle requirements.
+              Have a business or event in mind? Contact us to
+              discuss your custom branded water bottle
+              requirements.
             </p>
 
             <a
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Order custom branded water bottles through WhatsApp"
               className="mt-7 flex w-full items-center justify-center gap-2 rounded-full bg-[#D6B779] px-5 py-3.5 text-xs font-bold uppercase tracking-wider text-[#123D32] transition-all duration-300 hover:-translate-y-1 hover:bg-[#FAF8F2]"
             >
               <MessageCircle size={17} />
@@ -190,7 +210,9 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-[#FAF8F2]/15 py-7">
+
           <div className="flex flex-col items-center justify-between gap-5 text-center md:flex-row md:text-left">
+
             <p className="text-xs text-[#FAF8F2]/55">
               © {new Date().getFullYear()}{" "}
               <span className="font-semibold text-[#FAF8F2]">
@@ -213,6 +235,7 @@ const Footer = () => {
             <p className="text-[10px] font-bold tracking-[0.2em] text-[#D6B779]">
               YOUR BRAND. YOUR BOTTLE.
             </p>
+
           </div>
         </div>
       </div>

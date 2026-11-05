@@ -1,5 +1,4 @@
 
-import React from "react";
 import {
   Coffee,
   Briefcase,
@@ -20,38 +19,41 @@ const whatsappLink = "https://wa.me/923433787019";
 const services = [
   {
     id: 1,
-    title: "Cafes & Restaurants",
-    description: "Enhance your dining experience with branded bottles.",
+    title: "Custom Bottles for Cafes & Restaurants",
+    description:
+      "Enhance your customer experience with personalized water bottles featuring your cafe or restaurant logo and custom labels.",
     icon: Coffee,
     image: cafeImg,
   },
   {
     id: 2,
-    title: "Corporate Meetings",
-    description: "Professional branding for your business and team.",
+    title: "Corporate Branded Water Bottles",
+    description:
+      "Give business meetings, offices and corporate gatherings a professional touch with custom branded bottled water.",
     icon: Briefcase,
     image: corporateImg,
   },
   {
     id: 3,
-    title: "Events & Celebrations",
+    title: "Personalized Event Water Bottles",
     description:
-      "Make your special occasions memorable with custom labels.",
+      "Make weddings, birthdays, celebrations and special occasions memorable with personalized bottle labels.",
     icon: Calendar,
     image: eventsImg,
   },
   {
     id: 4,
-    title: "Gyms & Fitness Centers",
-    description: "Keep your members refreshed with your brand.",
+    title: "Branded Bottles for Gyms",
+    description:
+      "Build brand recognition at fitness centers and gyms with custom-labelled water bottles for your members.",
     icon: Dumbbell,
     image: gymImg,
   },
   {
     id: 5,
-    title: "Gaming Zones",
+    title: "Custom Bottles for Gaming Zones",
     description:
-      "Custom bottles for gaming lounges and eSports events.",
+      "Add a unique branded touch to gaming lounges, gaming zones and esports events with personalized bottles.",
     icon: Gamepad2,
     image: gamingImg,
   },
@@ -71,24 +73,41 @@ Please share your details and pricing.`;
   };
 
   return (
-    <main
+    <section
       id="services"
+      aria-labelledby="services-heading"
       className="scroll-mt-24 min-h-screen bg-[#F6F4EB] px-4 py-12 font-sans text-[#123D32] antialiased sm:px-6 sm:py-16 lg:px-10 lg:py-20"
     >
       <div className="mx-auto max-w-[1400px]">
-        {/* Section Heading */}
+
+        {/* SEO Section Heading */}
         <div className="mb-8 sm:mb-12">
           <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-[#718075] sm:text-xs">
             OUR SERVICES
           </p>
 
-          <h1 className="mt-2 font-serif text-3xl font-semibold tracking-[-0.03em] text-[#123D32] sm:text-4xl lg:text-5xl">
-            Perfect for Every Business
-          </h1>
+          <h2
+            id="services-heading"
+            className="mt-2 font-serif text-3xl font-semibold tracking-[-0.03em] text-[#123D32] sm:text-4xl lg:text-5xl"
+          >
+            Custom Branded Water Bottles
+            <span className="block text-[#66816C]">
+              for Every Business & Occasion
+            </span>
+          </h2>
+
+          <p className="mt-4 max-w-2xl text-sm leading-7 text-[#53665A] sm:text-base">
+            THE BRANDORA offers personalized water bottle branding
+            for cafes, restaurants, corporate offices, events,
+            gyms and gaming zones. Turn everyday bottled water
+            into a unique branding opportunity with custom labels
+            featuring your business identity.
+          </p>
         </div>
 
-        {/* Service Cards Grid */}
+        {/* Service Cards */}
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 xl:gap-4">
+
           {services.map(({ id, title, description, icon: Icon, image }) => (
             <article
               key={id}
@@ -98,8 +117,9 @@ Please share your details and pricing.`;
               <div className="relative h-[240px] w-full overflow-hidden bg-[#EFECE4] sm:h-[220px]">
                 <img
                   src={image}
-                  alt={`${title} custom branded water bottles`}
+                  alt={`${title} by THE BRANDORA`}
                   loading="lazy"
+                  decoding="async"
                   className="h-full w-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-105"
                 />
               </div>
@@ -129,6 +149,7 @@ Please share your details and pricing.`;
                   aria-label={`Enquire on WhatsApp about ${title}`}
                 >
                   Enquire Now
+
                   <ArrowUpRight
                     size={16}
                     className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
@@ -137,8 +158,9 @@ Please share your details and pricing.`;
               </div>
             </article>
           ))}
+
         </div>
       </div>
-    </main>
+    </section>
   );
 }
