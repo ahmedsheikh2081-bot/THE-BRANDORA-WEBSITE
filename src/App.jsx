@@ -11,22 +11,11 @@ function App() {
     <>
       <Navbar />
 
-      <main>
-        <section id="home">
-          <Home />
-        </section>
-
-        <section id="services">
-          <Services />
-        </section>
-
-        <section id="about">
-          <About />
-        </section>
-
-        <section id="contact">
-          <Contact />
-        </section>
+      <main className="w-full min-w-0">
+        <Home />
+        <Services />
+        <About />
+        <Contact />
       </main>
 
       <Footer />

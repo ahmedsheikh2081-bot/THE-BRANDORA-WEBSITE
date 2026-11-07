@@ -2,13 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
+/* ========================================
+   THE BRANDORA — BRAND SETTINGS
+======================================== */
+
 :root {
-  /* THE BRANDORA Brand Colors */
   --color-forest: #123D32;
   --color-cream: #FAF8F2;
   --color-gold: #D6B779;
 
-  /* Brand Typography */
   --font-body: "Manrope", sans-serif;
   --font-heading: "Cormorant Garamond", serif;
 
@@ -22,28 +24,95 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-* {
+/* ========================================
+   RESET
+======================================== */
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 html {
+  width: 100%;
+  max-width: 100%;
+  min-width: 320px;
+
   scroll-behavior: smooth;
-  scroll-padding-top: 100px;
+  scroll-padding-top: 90px;
+
+  -webkit-text-size-adjust: 100%;
+  overflow-x: clip;
 }
 
 body {
-  margin: 0;
-  padding: 0;
+  width: 100%;
+  max-width: 100%;
   min-width: 320px;
   min-height: 100vh;
+
+  margin: 0;
+  padding: 0;
+
   background: var(--color-cream);
   color: var(--color-forest);
+
   font-family: var(--font-body);
   font-size: 15px;
   line-height: 1.7;
+
+  overflow-x: clip;
 }
 
-/* Elegant Headings */
+/* React Root */
+#root {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: clip;
+}
+
+/* ========================================
+   LAYOUT SAFETY
+======================================== */
+
+main,
+section,
+article,
+header,
+footer,
+nav {
+  min-width: 0;
+  max-width: 100%;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+svg {
+  max-width: 100%;
+  flex-shrink: 0;
+}
+
+/* Prevent long text from pushing layout */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* ========================================
+   TYPOGRAPHY
+======================================== */
+
 h1,
 h2,
 h3,
@@ -51,23 +120,27 @@ h4,
 h5,
 h6 {
   margin-top: 0;
+
   color: var(--color-forest);
   font-family: var(--font-heading);
   font-weight: 600;
+
   line-height: 1.1;
   letter-spacing: -0.025em;
+
+  text-wrap: balance;
 }
 
 h1 {
-  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  font-size: clamp(2.4rem, 6vw, 5.5rem);
 }
 
 h2 {
-  font-size: clamp(2.2rem, 4vw, 3.8rem);
+  font-size: clamp(2rem, 4vw, 3.8rem);
 }
 
 h3 {
-  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
 }
 
 p {
@@ -91,26 +164,27 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
-img {
-  display: block;
-  max-width: 100%;
-}
+/* ========================================
+   ACCESSIBILITY
+======================================== */
 
-/* Text Selection */
 ::selection {
   color: var(--color-forest);
   background: var(--color-gold);
 }
 
-/* Accessible Focus */
 :focus-visible {
   outline: 2px solid var(--color-gold);
   outline-offset: 4px;
 }
 
-/* Clean Scrollbar */
+/* ========================================
+   SCROLLBAR
+======================================== */
+
 ::-webkit-scrollbar {
   width: 8px;
+  height: 0;
 }
 
 ::-webkit-scrollbar-track {
@@ -127,7 +201,7 @@ img {
 }
 
 /* ========================================
-   THE BRANDORA — Product Image Animation
+   PRODUCT IMAGE ANIMATION
 ======================================== */
 
 .brandora-float {
@@ -146,7 +220,6 @@ img {
   }
 }
 
-/* Rounded Product Image */
 .brandora-float img {
   border-radius: 28px;
   transition:
@@ -154,7 +227,7 @@ img {
     filter 500ms ease;
 }
 
-/* Subtle Desktop Hover */
+/* Desktop Hover */
 @media (hover: hover) and (pointer: fine) {
   .brandora-float:hover img {
     transform: scale(1.025);
@@ -162,8 +235,29 @@ img {
   }
 }
 
-/* Mobile Responsive Image Animation */
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1023px) {
+  html {
+    scroll-padding-top: 85px;
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
 @media (max-width: 767px) {
+  html {
+    scroll-padding-top: 76px;
+  }
+
+  body {
+    font-size: 14px;
+  }
+
   .brandora-float {
     animation-duration: 6.5s;
   }
@@ -171,9 +265,49 @@ img {
   .brandora-float img {
     border-radius: 24px;
   }
+
+  /* Avoid oversized content on small screens */
+  h1 {
+    font-size: clamp(2.25rem, 10vw, 3.5rem);
+  }
+
+  h2 {
+    font-size: clamp(1.9rem, 8vw, 2.8rem);
+  }
+
+  /* Keep media inside viewport */
+  img,
+  video {
+    max-width: 100%;
+  }
 }
 
-/* Accessibility: Reduce Motion */
+/* ========================================
+   SMALL MOBILE — 360px
+======================================== */
+
+@media (max-width: 380px) {
+  body {
+    font-size: 13px;
+  }
+
+  h1 {
+    font-size: 2.25rem;
+  }
+
+  h2 {
+    font-size: 1.9rem;
+  }
+
+  .brandora-float img {
+    border-radius: 20px;
+  }
+}
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

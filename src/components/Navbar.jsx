@@ -16,29 +16,26 @@ const whatsappLink =
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const linkStyles =
-    "relative whitespace-nowrap py-2 text-[13px] font-semibold text-[#123D32]/70 transition-colors duration-200 hover:text-[#123D32]";
-
   const whatsappButton =
     "inline-flex items-center justify-center gap-2 rounded-full bg-[#D6B779] px-4 py-2.5 text-sm font-semibold text-[#123D32] transition-colors duration-200 hover:bg-[#E8D8B2]";
 
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-[#D6B779]/40 bg-[#FAF8F2]">
-      <nav className="relative mx-auto flex h-[68px] w-full max-w-[1440px] items-center justify-between gap-2 px-4 sm:h-[76px] sm:px-6 lg:h-[84px] lg:gap-4 lg:px-8">
+    <header className="sticky top-0 z-50 w-full min-w-0 border-b border-[#D6B779]/40 bg-[#FAF8F2]">
+      <nav className="relative mx-auto flex h-[68px] w-full max-w-[1440px] items-center justify-between gap-2 px-3 sm:h-[76px] sm:px-6 lg:h-[84px] lg:gap-4 lg:px-8">
 
         {/* Logo */}
         <a
           href="#home"
           onClick={closeMenu}
           aria-label="THE BRANDORA Home"
-          className="flex shrink-0 items-center"
+          className="flex min-w-0 shrink-0 items-center"
         >
           <img
             src={brandoraLogo}
             alt="THE BRANDORA - Your Brand. Your Bottle."
-            className="block h-[42px] w-[145px] object-contain object-left sm:h-[48px] sm:w-[175px] lg:h-[54px] lg:w-[210px] xl:w-[230px]"
+            className="block h-[42px] w-[140px] object-contain object-left sm:h-[48px] sm:w-[175px] lg:h-[54px] lg:w-[210px] xl:w-[230px]"
           />
         </a>
 
@@ -48,14 +45,14 @@ function Navbar() {
             <a
               key={link.path}
               href={link.path}
-              className={linkStyles}
+              className="whitespace-nowrap py-2 text-[13px] font-semibold text-[#123D32]/70 transition-colors duration-200 hover:text-[#123D32]"
             >
               {link.name}
             </a>
           ))}
         </div>
 
-        {/* Desktop WhatsApp Button */}
+        {/* Desktop WhatsApp */}
         <a
           href={whatsappLink}
           target="_blank"
@@ -86,7 +83,6 @@ function Navbar() {
           className="absolute left-0 top-full z-50 w-full border-t border-[#D6B779]/40 bg-[#FAF8F2] px-4 pb-5 pt-3 shadow-lg lg:hidden"
         >
           <div className="mx-auto w-full max-w-md">
-
             <p className="px-3 pb-2 pt-1 text-[10px] font-bold uppercase tracking-[0.22em] text-[#123D32]/45">
               Navigation
             </p>
@@ -97,15 +93,14 @@ function Navbar() {
                   key={link.path}
                   href={link.path}
                   onClick={closeMenu}
-                  className="flex min-h-[48px] items-center justify-between border-b border-[#123D32]/10 px-2 text-sm font-semibold text-[#123D32]/70 transition-colors hover:text-[#123D32] last:border-b-0"
+                  className="flex min-h-[48px] items-center justify-between gap-3 border-b border-[#123D32]/10 px-2 text-sm font-semibold text-[#123D32]/70 transition-colors hover:text-[#123D32] last:border-b-0"
                 >
                   {link.name}
-                  <ArrowUpRight size={16} className="text-[#B89A5A]" />
+                  <ArrowUpRight size={16} className="shrink-0 text-[#B89A5A]" />
                 </a>
               ))}
             </div>
 
-            {/* Mobile WhatsApp Button */}
             <a
               href={whatsappLink}
               target="_blank"

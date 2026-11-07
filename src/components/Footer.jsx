@@ -34,12 +34,10 @@ const Footer = () => {
     },
   ];
 
-  // Single-page section navigation
   const links = [
     { name: "Home", path: "#home" },
     { name: "About Us", path: "#about" },
     { name: "Services", path: "#services" },
-    { name: "Our Work", path: "#portfolio" },
     { name: "Contact", path: "#contact" },
   ];
 
@@ -52,39 +50,37 @@ const Footer = () => {
 
   return (
     <footer
-      className="bg-[#123D32] text-[#FAF8F2]"
+      className="w-full min-w-0 bg-[#123D32] text-[#FAF8F2]"
       aria-label="THE BRANDORA website footer"
     >
-      {/* Top Gold Line */}
       <div className="h-[2px] w-full bg-[#D6B779]" />
 
-      <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
+      <div className="mx-auto w-full min-w-0 max-w-[1400px] px-4 sm:px-8 lg:px-12">
 
         {/* Main Footer */}
-        <div className="grid grid-cols-1 gap-12 py-14 sm:grid-cols-2 lg:grid-cols-12 lg:gap-10 lg:py-20">
+        <div className="grid min-w-0 grid-cols-1 gap-10 py-12 sm:grid-cols-2 sm:gap-12 lg:grid-cols-12 lg:gap-10 lg:py-20">
 
           {/* Brand Section */}
-          <div className="lg:col-span-4">
-
+          <div className="min-w-0 lg:col-span-4">
             <a
               href="#home"
               aria-label="THE BRANDORA - Back to home"
-              className="inline-flex items-center gap-3"
+              className="inline-flex max-w-full items-center gap-3"
             >
               <img
                 src={logo}
-                alt="THE BRANDORA custom branded water bottle branding logo"
-                className="h-14 w-14 object-contain"
+                alt="THE BRANDORA logo"
+                className="h-12 w-12 shrink-0 object-contain sm:h-14 sm:w-14"
                 loading="lazy"
                 decoding="async"
               />
 
-              <div>
-                <span className="block font-serif text-2xl font-bold tracking-wide text-[#FAF8F2]">
+              <div className="min-w-0">
+                <span className="block break-words font-serif text-xl font-bold tracking-wide text-[#FAF8F2] sm:text-2xl">
                   THE BRANDORA
                 </span>
 
-                <span className="mt-1 block text-[9px] font-semibold tracking-[0.25em] text-[#D6B779]">
+                <span className="mt-1 block text-[8px] font-semibold tracking-[0.2em] text-[#D6B779] sm:text-[9px] sm:tracking-[0.25em]">
                   YOUR BRAND. YOUR BOTTLE.
                 </span>
               </div>
@@ -98,17 +94,16 @@ const Footer = () => {
               a memorable brand presentation in Pakistan.
             </p>
 
-            {/* WhatsApp Number */}
             <a
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Contact THE BRANDORA on WhatsApp at +92 343 3787019"
-              className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-[#D6B779] transition-colors hover:text-[#FAF8F2]"
+              aria-label="Contact THE BRANDORA on WhatsApp"
+              className="mt-6 inline-flex max-w-full items-center gap-2 text-sm font-medium text-[#D6B779] transition-colors hover:text-[#FAF8F2]"
             >
-              <Phone size={15} />
+              <Phone size={15} className="shrink-0" />
               +92 343 3787019
-              <ArrowUpRight size={14} />
+              <ArrowUpRight size={14} className="shrink-0" />
             </a>
 
             {/* Social Media */}
@@ -126,7 +121,7 @@ const Footer = () => {
                     rel="noopener noreferrer"
                     aria-label={`Follow THE BRANDORA on ${social.name}`}
                     title={social.name}
-                    className="flex h-10 w-10 items-center justify-center rounded-full border border-[#D6B779]/30 text-sm font-bold text-[#FAF8F2] transition-all duration-300 hover:-translate-y-1 hover:border-[#D6B779] hover:bg-[#D6B779] hover:text-[#123D32]"
+                    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#D6B779]/30 text-sm font-bold text-[#FAF8F2] transition-all duration-300 hover:-translate-y-1 hover:border-[#D6B779] hover:bg-[#D6B779] hover:text-[#123D32]"
                   >
                     {social.label}
                   </a>
@@ -136,8 +131,7 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div className="lg:col-span-2">
-
+          <div className="min-w-0 lg:col-span-2">
             <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-[#D6B779]">
               Explore
             </h2>
@@ -148,7 +142,7 @@ const Footer = () => {
                   <li key={link.path}>
                     <a
                       href={link.path}
-                      className="inline-flex items-center text-sm text-[#FAF8F2]/70 transition-all duration-300 hover:translate-x-1 hover:text-[#D6B779]"
+                      className="inline-flex max-w-full items-center text-sm text-[#FAF8F2]/70 transition-all duration-300 hover:translate-x-1 hover:text-[#D6B779]"
                     >
                       {link.name}
                     </a>
@@ -159,8 +153,7 @@ const Footer = () => {
           </div>
 
           {/* Services */}
-          <div className="lg:col-span-3">
-
+          <div className="min-w-0 lg:col-span-3">
             <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-[#D6B779]">
               Our Services
             </h2>
@@ -169,7 +162,7 @@ const Footer = () => {
               {services.map((service) => (
                 <li
                   key={service}
-                  className="text-sm text-[#FAF8F2]/70"
+                  className="break-words text-sm text-[#FAF8F2]/70"
                 >
                   {service}
                 </li>
@@ -178,13 +171,12 @@ const Footer = () => {
           </div>
 
           {/* Contact Card */}
-          <div className="rounded-2xl border border-[#D6B779]/25 bg-[#FAF8F2]/[0.04] p-6 sm:p-7 lg:col-span-3">
-
+          <div className="min-w-0 rounded-2xl border border-[#D6B779]/25 bg-[#FAF8F2]/[0.04] p-5 sm:p-7 lg:col-span-3">
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#D6B779]">
               Let's Connect
             </span>
 
-            <h2 className="mt-4 font-serif text-2xl leading-snug text-[#FAF8F2]">
+            <h2 className="mt-4 break-words font-serif text-2xl leading-snug text-[#FAF8F2]">
               Let's Make Your Brand Stand Out.
             </h2>
 
@@ -199,20 +191,18 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Order custom branded water bottles through WhatsApp"
-              className="mt-7 flex w-full items-center justify-center gap-2 rounded-full bg-[#D6B779] px-5 py-3.5 text-xs font-bold uppercase tracking-wider text-[#123D32] transition-all duration-300 hover:-translate-y-1 hover:bg-[#FAF8F2]"
+              className="mt-7 flex min-h-[48px] w-full items-center justify-center gap-2 rounded-full bg-[#D6B779] px-3 py-3.5 text-[11px] font-bold uppercase tracking-wide text-[#123D32] transition-all duration-300 hover:-translate-y-1 hover:bg-[#FAF8F2] sm:px-5 sm:text-xs sm:tracking-wider"
             >
-              <MessageCircle size={17} />
+              <MessageCircle size={17} className="shrink-0" />
               Chat on WhatsApp
-              <ArrowUpRight size={15} />
+              <ArrowUpRight size={15} className="shrink-0" />
             </a>
           </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="border-t border-[#FAF8F2]/15 py-7">
-
-          <div className="flex flex-col items-center justify-between gap-5 text-center md:flex-row md:text-left">
-
+          <div className="flex min-w-0 flex-col items-center justify-between gap-5 text-center md:flex-row md:text-left">
             <p className="text-xs text-[#FAF8F2]/55">
               © {new Date().getFullYear()}{" "}
               <span className="font-semibold text-[#FAF8F2]">
@@ -225,7 +215,7 @@ const Footer = () => {
               href="https://www.linkedin.com/in/muhammad-ahmed-56a42a3aa/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-xs text-[#FAF8F2]/65 transition hover:text-[#D6B779]"
+              className="inline-flex max-w-full flex-wrap items-center justify-center gap-2 text-xs text-[#FAF8F2]/65 transition hover:text-[#D6B779]"
             >
               <span className="font-bold">in</span>
               Designed & Developed by Ahmed Sheikh
@@ -235,7 +225,6 @@ const Footer = () => {
             <p className="text-[10px] font-bold tracking-[0.2em] text-[#D6B779]">
               YOUR BRAND. YOUR BOTTLE.
             </p>
-
           </div>
         </div>
       </div>

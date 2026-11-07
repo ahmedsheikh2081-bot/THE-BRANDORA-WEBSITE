@@ -20,40 +20,35 @@ const services = [
   {
     id: 1,
     title: "Custom Bottles for Cafes & Restaurants",
-    description:
-      "Enhance your customer experience with personalized water bottles featuring your cafe or restaurant logo and custom labels.",
+    description: "Enhance your customer experience with personalized water bottles featuring your cafe or restaurant logo and custom labels.",
     icon: Coffee,
     image: cafeImg,
   },
   {
     id: 2,
     title: "Corporate Branded Water Bottles",
-    description:
-      "Give business meetings, offices and corporate gatherings a professional touch with custom branded bottled water.",
+    description: "Give business meetings, offices and corporate gatherings a professional touch with custom branded bottled water.",
     icon: Briefcase,
     image: corporateImg,
   },
   {
     id: 3,
     title: "Personalized Event Water Bottles",
-    description:
-      "Make weddings, birthdays, celebrations and special occasions memorable with personalized bottle labels.",
+    description: "Make weddings, birthdays, celebrations and special occasions memorable with personalized bottle labels.",
     icon: Calendar,
     image: eventsImg,
   },
   {
     id: 4,
     title: "Branded Bottles for Gyms",
-    description:
-      "Build brand recognition at fitness centers and gyms with custom-labelled water bottles for your members.",
+    description: "Build brand recognition at fitness centers and gyms with custom-labelled water bottles for your members.",
     icon: Dumbbell,
     image: gymImg,
   },
   {
     id: 5,
     title: "Custom Bottles for Gaming Zones",
-    description:
-      "Add a unique branded touch to gaming lounges, gaming zones and esports events with personalized bottles.",
+    description: "Add a unique branded touch to gaming lounges, gaming zones and esports events with personalized bottles.",
     icon: Gamepad2,
     image: gamingImg,
   },
@@ -67,28 +62,29 @@ I'm interested in: ${title}
 
 Please share your details and pricing.`;
 
-    const url = `${whatsappLink}?text=${encodeURIComponent(message)}`;
-
-    window.open(url, "_blank", "noopener,noreferrer");
+    window.open(
+      `${whatsappLink}?text=${encodeURIComponent(message)}`,
+      "_blank",
+      "noopener,noreferrer"
+    );
   };
 
   return (
     <section
       id="services"
       aria-labelledby="services-heading"
-      className="scroll-mt-24 min-h-screen bg-[#F6F4EB] px-4 py-12 font-sans text-[#123D32] antialiased sm:px-6 sm:py-16 lg:px-10 lg:py-20"
+      className="w-full min-w-0 scroll-mt-[84px] bg-[#F6F4EB] px-4 py-12 font-sans text-[#123D32] antialiased sm:scroll-mt-24 sm:px-6 sm:py-16 lg:px-10 lg:py-20"
     >
-      <div className="mx-auto max-w-[1400px]">
+      <div className="mx-auto w-full min-w-0 max-w-[1400px]">
 
-        {/* SEO Section Heading */}
-        <div className="mb-8 sm:mb-12">
+        <div className="mb-8 min-w-0 sm:mb-12">
           <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-[#718075] sm:text-xs">
             OUR SERVICES
           </p>
 
           <h2
             id="services-heading"
-            className="mt-2 font-serif text-3xl font-semibold tracking-[-0.03em] text-[#123D32] sm:text-4xl lg:text-5xl"
+            className="mt-2 break-words font-serif text-3xl font-semibold tracking-[-0.03em] text-[#123D32] sm:text-4xl lg:text-5xl"
           >
             Custom Branded Water Bottles
             <span className="block text-[#66816C]">
@@ -105,15 +101,12 @@ Please share your details and pricing.`;
           </p>
         </div>
 
-        {/* Service Cards */}
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 xl:gap-4">
-
+        <div className="grid min-w-0 grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 xl:gap-4">
           {services.map(({ id, title, description, icon: Icon, image }) => (
             <article
               key={id}
-              className="group relative flex flex-col overflow-hidden rounded-[1.25rem] border border-[#E7E3D4] bg-[#F9F7EF] transition-all duration-300 hover:-translate-y-1 hover:border-[#D6B779] hover:bg-white hover:shadow-lg hover:shadow-[#123D32]/5"
+              className="group relative flex min-w-0 flex-col overflow-hidden rounded-[1.25rem] border border-[#E7E3D4] bg-[#F9F7EF] transition-all duration-300 hover:-translate-y-1 hover:border-[#D6B779] hover:bg-white hover:shadow-lg hover:shadow-[#123D32]/5"
             >
-              {/* Service Image */}
               <div className="relative h-[240px] w-full overflow-hidden bg-[#EFECE4] sm:h-[220px]">
                 <img
                   src={image}
@@ -124,41 +117,33 @@ Please share your details and pricing.`;
                 />
               </div>
 
-              {/* Icon Badge */}
-              <div className="absolute left-5 top-[210px] z-20 flex h-12 w-12 items-center justify-center rounded-full border border-[#E7E3D4] bg-[#F2EFE3] text-[#16362C] shadow-md transition-colors duration-300 group-hover:bg-[#16362C] group-hover:text-white sm:top-[190px]">
+              <div className="absolute left-5 top-[210px] z-20 flex h-12 w-12 items-center justify-center rounded-full border border-[#E7E3D4] bg-[#F2EFE3] text-[#16362C] shadow-md sm:top-[190px]">
                 <Icon size={20} strokeWidth={1.8} />
               </div>
 
-              {/* Card Content */}
               <div className="flex flex-1 flex-col justify-between p-5 pt-8">
-                <div>
-                  <h3 className="text-base font-bold text-[#16362C] sm:text-[17px]">
+                <div className="min-w-0">
+                  <h3 className="break-words text-base font-bold text-[#16362C] sm:text-[17px]">
                     {title}
                   </h3>
 
-                  <p className="mt-2 text-xs leading-relaxed text-[#52665A] sm:text-[13px]">
+                  <p className="mt-2 break-words text-xs leading-relaxed text-[#52665A] sm:text-[13px]">
                     {description}
                   </p>
                 </div>
 
-                {/* WhatsApp Enquiry */}
                 <button
                   type="button"
                   onClick={() => handleEnquiry(title)}
-                  className="mt-5 inline-flex w-full cursor-pointer items-center justify-between border-t border-[#E7E3D4] pt-3.5 text-left text-xs font-bold tracking-wide text-[#16362C] transition-colors hover:text-[#66816C]"
+                  className="mt-5 inline-flex min-h-10 w-full items-center justify-between gap-2 border-t border-[#E7E3D4] pt-3.5 text-left text-xs font-bold tracking-wide text-[#16362C] transition-colors hover:text-[#66816C]"
                   aria-label={`Enquire on WhatsApp about ${title}`}
                 >
                   Enquire Now
-
-                  <ArrowUpRight
-                    size={16}
-                    className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                  />
+                  <ArrowUpRight size={16} className="shrink-0" />
                 </button>
               </div>
             </article>
           ))}
-
         </div>
       </div>
     </section>
